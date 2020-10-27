@@ -21,8 +21,7 @@ class ExampleTest extends TestCase
 
         $user = User::factory()->hasAccounts(1)->create();
 
+        // This line will result in an exeption when the test runs
         $user->accounts->first()->assignRole('Free Plan');
-
-        $response->assertStatus(200);
     }
 }
